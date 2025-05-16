@@ -1,0 +1,114 @@
+.about-us {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  color: #103c59;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+.hero-section {
+  text-align: center;
+  background-color: #dd573d;
+  color: #fff;
+  padding: 3rem 1rem;
+  border-radius: 10px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-section,
+.mission-section,
+.coverage-section,
+.community-section {
+  text-align: center;
+}
+
+.about-section h2,
+.mission-section h2,
+.services-section h2,
+.why-choose-section h2,
+.coverage-section h2,
+.testimonials-section h2,
+.community-section h2,
+.cta-section h2 {
+  font-size: 2rem;
+  color: #dd573d;
+  margin-bottom: 1rem;
+}
+
+.services-section ul,
+.why-choose-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0;
+  gap: 1rem;
+  list-style: none;
+}
+
+.services-section li,
+.why-choose-section li {
+  background: #f8f8f8;
+  border-left: 4px solid #dd573d;
+  padding: 1rem;
+  width: calc(33.33% - 1rem);
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.testimonials-section blockquote {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-left: 4px solid #103c59;
+  margin: 1rem auto;
+  max-width: 800px;
+  font-style: italic;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #103c59;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.cta-section a.btn-primary {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #dd573d;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .services-section li,
+  .why-choose-section li {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-section li,
+  .why-choose-section li {
+    width: 100%;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+}

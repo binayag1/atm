@@ -1,0 +1,25 @@
+.invoice-auth, .invoice-admin {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.invoice-auth input {
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+.invoice-item input {
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 0.4rem;
+}
+
+.invoice-summary {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+.invoice-preview {
+  margin-top: 1rem;
+}
