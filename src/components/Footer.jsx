@@ -25,7 +25,7 @@ const Footer = () => (
       <h4>Contact Us</h4>
       <a href="tel:0469303269">📞 0469303269</a>
       <p>✉️ info@anytimemovers.com.au</p>
-      <p>🏢 Salisbury, Adelaide</p>
+      <p>🏢 Munno Para, Adelaide</p>
     </div>
 
     <div className="social-bar">

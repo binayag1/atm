@@ -59,7 +59,7 @@ const ContactUs = () => {
           <h2>Get in Touch</h2>
           <p><strong>Phone:</strong> <a href="tel:0469303269">0469 303 269</a></p>
           <p><strong>Email:</strong> <a href="mailto:info@anytimemovers.com.au">info@anytimemovers.com.au</a></p>
-          <p><strong>Address:</strong> Salisbury, South Australia</p>
+          <p><strong>Address:</strong> Munno Para, South Australia</p>
           <p><strong>Hours:</strong> 7 Days a Week · 7:00 AM – 8:00 PM</p>
         </div>
 
