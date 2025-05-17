@@ -1,7 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ContactUs.css';
 
 const ContactUs = () => {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const [status, setStatus] = useState({ loading: false, success: '', error: '' });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { name, email, message } = form;
+
+    if (!name || !email || !message) {
+      setStatus({ loading: false, success: '', error: 'Please fill in all required fields.' });
+      return;
+    }
+
+    setStatus({ loading: true, success: '', error: '' });
+
+    try {
+      const res = await fetch('https://anytimemovers.com.au/backend/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus({ loading: false, success: 'Email sent successfully!', error: '' });
+        setForm({ name: '', email: '', phone: '', message: '' });
+      } else {
+        throw new Error(data.message || 'Email failed to send.');
+      }
+    } catch (err) {
+      setStatus({ loading: false, success: '', error: err.message });
+    }
+  };
+
   return (
     <div className="contact-us-page">
       <section className="contact-hero">
@@ -20,52 +65,64 @@ const ContactUs = () => {
 
         <div className="contact-form">
           <h2>Send Us a Message</h2>
-          <form>
-           <div className="form-group">
-            <label htmlFor="name">Your Name</label>
-            <input
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-            />
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Your Name <span className="required">*</span></label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={form.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="email">Your Email</label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="email">Your Email <span className="required">*</span></label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="phone">Your Phone</label>
-            <input
-              id="phone"
-              type="tel"
-              name="phone"
-              placeholder="Your Phone"
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="phone">Your Phone</label>
+              <input
+                id="phone"
+                type="tel"
+                name="phone"
+                placeholder="Your Phone"
+                value={form.phone}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="message">Your Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Your Message"
-              rows="5"
-              required
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="message">Your Message <span className="required">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                value={form.message}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-          <button type="submit" className="btn-primary">Send Message</button>
+            {status.error && <p className="error-message">{status.error}</p>}
+            {status.success && <p className="success-message">{status.success}</p>}
 
+            <button type="submit" className="btn-primary" disabled={status.loading}>
+              {status.loading ? <span className="spinner" /> : 'Send Message'}
+            </button>
           </form>
         </div>
       </section>
@@ -82,7 +139,6 @@ const ContactUs = () => {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
-
       </section>
     </div>
   );

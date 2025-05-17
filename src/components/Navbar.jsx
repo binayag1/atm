@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-logo">
         <Link to="/">
-          <img src="/logo.PNG" alt="Any Time Movers AU" className="logo" />
+          <img src="/logo.png" alt="Any Time Movers AU" className="logo" />
         </Link>
       </div>
 
