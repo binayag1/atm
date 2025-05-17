@@ -35,7 +35,7 @@ const Footer = () => (
       <a href="https://instagram.com" target="_blank" rel="noreferrer">
         <img src="instagram.svg" alt="Instagram" />
       </a>
-      <a href="https://tiktok.com" target="_blank" rel="noreferrer">
+      <a href="https://www.tiktok.com/@anytimemovers0469303269" target="_blank" rel="noreferrer">
         <img src="tiktok.svg" alt="TikTok" />
       </a>
     </div>
