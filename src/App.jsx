@@ -9,6 +9,8 @@ import Contact from './pages/Contact';
 import Quote from './pages/Quote';
 import InvoiceAdmin from './pages/InvoiceAdmin';
 import './App.css';
+import Gallery from './pages/Gallery';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -20,8 +22,10 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/quote" element={<Quote />} />
           <Route path="/invoice-admin" element={<InvoiceAdmin />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         </Routes>
       </div>

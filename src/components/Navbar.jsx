@@ -20,7 +20,8 @@ const Navbar = () => {
         <Link to="/services" onClick={toggleMenu}>Services</Link>
         <Link to="/quote" onClick={toggleMenu}>Get a Quote</Link>
         <Link to="/about" onClick={toggleMenu}>About Us</Link>
-        <Link to="/contact" onClick={toggleMenu}>Contact</Link>
+        <Link to="/gallery" onClick={toggleMenu}>Gallery</Link>
+        <Link to="/contact" onClick={toggleMenu}>Contact Us</Link>
       </div>
 
       <div className="hamburger" onClick={toggleMenu}>

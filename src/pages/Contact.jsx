@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ContactUs.css';
+import PrivacyContent from '../components/PrivacyContent';
 
 const ContactUs = () => {
   const [form, setForm] = useState({
@@ -8,6 +9,9 @@ const ContactUs = () => {
     phone: '',
     message: '',
   });
+
+  const [agreed, setAgreed] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
 
   const [status, setStatus] = useState({ loading: false, success: '', error: '' });
 
@@ -25,6 +29,11 @@ const ContactUs = () => {
       return;
     }
 
+    if (!agreed) {
+      setStatus({ loading: false, success: '', error: 'You must agree to the Privacy Policy.' });
+      return;
+    }
+
     setStatus({ loading: true, success: '', error: '' });
 
     try {
@@ -39,6 +48,7 @@ const ContactUs = () => {
       if (data.success) {
         setStatus({ loading: false, success: 'Email sent successfully!', error: '' });
         setForm({ name: '', email: '', phone: '', message: '' });
+        setAgreed(false);
       } else {
         throw new Error(data.message || 'Email failed to send.');
       }
@@ -117,8 +127,47 @@ const ContactUs = () => {
               />
             </div>
 
-            {status.error && <p className="error-message">{status.error}</p>}
-            {status.success && <p className="success-message">{status.success}</p>}
+            {/* Privacy Agreement Checkbox */}
+            <div
+              className="form-group"
+              style={{
+                display: '-webkit-inline-box',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '14px',
+              }}
+            >
+              <input
+                style={{ width: '5%' }}
+                type="checkbox"
+                id="privacyAgreement"
+                checked={agreed}
+                onChange={(e) => setAgreed(e.target.checked)}
+              />
+              <label htmlFor="privacyAgreement" style={{ cursor: 'pointer', display: 'block', marginTop: '5px' }}>
+                I have read and agree to the{' '}
+                <button
+                  type="button"
+                  onClick={() => setShowPrivacy(true)}
+                  style={{
+                    fontSize: '14px',
+                    color: '#f26c50',
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    margin: 0,
+                    textDecoration: 'underline',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Privacy Policy
+                </button>
+                .
+              </label>
+            </div>
+
+            {status.error && <p className="error-message" style={{fontSize: '16px' }}>{status.error}</p>}
+            {status.success && <p className="success-message" style={{ fontSize: '16px' }}>{status.success}</p>}
 
             <button type="submit" className="btn-primary" disabled={status.loading}>
               {status.loading ? <span className="spinner" /> : 'Send Message'}
@@ -140,6 +189,70 @@ const ContactUs = () => {
           referrerPolicy="no-referrer-when-downgrade"
         />
       </section>
+
+      {/* Privacy Policy Modal */}
+      {showPrivacy && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0, left: 0, right: 0, bottom: 0,
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              background: '#fff',
+              maxWidth: '90vw',
+              width: '800px',
+              height: '80vh',
+              borderRadius: '10px',
+              overflowY: 'auto',
+              position: 'relative',
+              padding: '20px',
+            }}
+          >
+            <button
+              onClick={() => setShowPrivacy(false)}
+              style={{
+                position: 'absolute',
+                top: '10px',
+                right: '10px',
+                background: '#f26c50',
+                color: '#fff',
+                border: 'none',
+                padding: '6px 12px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                zIndex: 1,
+              }}
+            >
+              Close
+            </button>
+
+            <PrivacyContent />
+
+            <div style={{ textAlign: 'center', marginTop: '10px' }}>
+              <button
+                onClick={() => setShowPrivacy(false)}
+                style={{
+                  backgroundColor: '#103c59',
+                  color: '#fff',
+                  padding: '8px 16px',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

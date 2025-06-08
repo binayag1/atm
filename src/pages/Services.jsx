@@ -5,39 +5,45 @@ const services = [
   {
     title: 'Local Removals',
     image: 'local_removals.jpeg',
-    description: 'Whether you are moving across the street or to the next suburb, we have got you covered. Our local moving services are fast, reliable, and cost-effective – perfect for short-distance moves within Adelaide.',
+    description: 'Whether you’re moving across the street or to the next suburb, we’ve got you covered. Our local moving services are fast, reliable, and cost-effective — ideal for short-distance moves within Adelaide.',
   },
   {
     title: 'Home Removals',
     image: 'home_removals.jpeg',
-    description: 'Make your house move smooth and stress-free with Any Time Movers AU. Our professional removalists handle your belongings with care and precision, ensuring a safe transition to your new home. Based in Adelaide, we service all surrounding suburbs with tailored, affordable packages.',
-  },
-  {
-    title: 'Office & Factory Removals',
-    image: 'office_removals.png',
-    description: 'We understand the importance of a quick and efficient office or industrial move. Our trained staff minimize downtime while relocating your workspaces, machinery, or furniture securely. Serving businesses across Adelaide and its industrial zones.',
-  },
-  {
-    title: 'Hard Rubbish Removals',
-    image: 'hard_waste_removals.png',
-    description: 'Need to get rid of old furniture, appliances, or waste after a move? We provide responsible and eco-friendly hard rubbish removal across Adelaide. We dispose of unwanted items quickly and legally so you don’t have to.',
-  },
-  {
-    title: 'Storage Solutions',
-    image: 'storage_solutions.jpg',
-    description: 'Need temporary or long-term storage? Our secure, weatherproof storage units are perfect for furniture, office equipment, or personal belongings. Conveniently located in Adelaide and accessible when you need them.',
-  },
-  {
-    title: 'Packaging & Unpackaging',
-    image: 'packaging_and_unpackaging.png',
-    description: 'Leave the packing to us! We use premium packing materials to protect your items during transit and can even unpack everything once you are at your new location. A perfect hands-free moving experience.',
+    description: 'Make your house move smooth and stress-free with Any Time Movers AU. Our experienced removalists handle your belongings with care and precision, ensuring a safe transition to your new home across Adelaide and surrounding suburbs.',
   },
   {
     title: 'General Waste Removal',
     image: 'general_waste_removals.jpeg',
-    description: 'We don’t just move – we clean up too. From leftover boxes to general household waste, we provide end-to-end waste management for your property. Affordable rates and prompt pickup anywhere in Adelaide.',
+    description: 'We don’t just move — we clean up too. From leftover boxes to general household waste, we offer end-to-end waste management for your property. Prompt pickup and affordable pricing across Adelaide.',
+  },
+  {
+    title: 'Concrete Removals',
+    image: 'concrete_removals.png',
+    description: 'Need to clear broken concrete from a driveway, path, or construction site? Our team provides fast, safe, and eco-conscious concrete removal services across Adelaide. We handle the heavy lifting so you don’t have to.',
+  },
+  {
+    title: 'Hard Rubbish Removals',
+    image: 'hard_rubbish_removals.png',
+    description: 'Got bulky waste? We responsibly remove old furniture, appliances, and hard rubbish. Our eco-friendly disposal service operates across Adelaide with quick turnarounds and competitive pricing.',
+  },
+  {
+    title: 'Office & Factory Removals',
+    image: 'office_removals.png',
+    description: 'Minimise downtime with our efficient office and factory removals. Whether relocating desks, machines, or entire workspaces, our team ensures secure transport for Adelaide businesses of all sizes.',
+  },
+  {
+    title: 'Packaging & Unpackaging',
+    image: 'packaging_and_unpackaging.png',
+    description: 'Leave the packing to us! We use premium materials to protect your items and can even unpack everything at your new location. A complete, hands-free moving experience tailored for convenience.',
+  },
+  {
+    title: 'Storage Solutions',
+    image: 'storage_solutions.jpg',
+    description: 'Need short- or long-term storage? Our secure, weatherproof storage units in Adelaide are perfect for storing furniture, personal items, or office equipment with 24/7 accessibility options.',
   },
 ];
+
 
 const OurServices = () => (
   <div className="services-page">

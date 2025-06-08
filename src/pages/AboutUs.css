@@ -12,9 +12,10 @@ section {
 
 .hero-section {
   text-align: center;
-  background-color: #dd573d;
+  color: #f26c50;
+  background-color: #103c59;
   color: #fff;
-  padding: 3rem 1rem;
+  padding: 1rem 1rem;
   border-radius: 10px;
 }
 
@@ -39,7 +40,7 @@ section {
 .community-section h2,
 .cta-section h2 {
   font-size: 2rem;
-  color: #dd573d;
+  color: #f26c50;
   margin-bottom: 1rem;
 }
 
@@ -56,7 +57,7 @@ section {
 .services-section li,
 .why-choose-section li {
   background: #f8f8f8;
-  border-left: 4px solid #dd573d;
+  border-left: 4px solid #f26c50;
   padding: 1rem;
   width: calc(33.33% - 1rem);
   box-sizing: border-box;
@@ -83,7 +84,7 @@ section {
 .cta-section a.btn-primary {
   display: inline-block;
   margin-top: 1rem;
-  background-color: #dd573d;
+  background-color: #f26c50;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;

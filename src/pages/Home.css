@@ -14,7 +14,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -32,7 +31,7 @@
 
 .service-item h3 {
   font-size: 1.25rem;
-  color: #dd573d;
+  color: #f26c50;
   margin-bottom: 10px;
 }
 
@@ -54,7 +53,7 @@
 }
 
 .btn-secondary:hover {
-  background-color: #dd573d;
+  background-color: #f26c50;
 }
 
 @media (max-width: 600px) {
@@ -105,7 +104,7 @@
 
 .btn-primary {
   padding: 12px 24px;
-  background-color: #dd573d;
+  background-color: #f26c50;
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -169,7 +168,7 @@
 .benefit-card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #dd573d;
+  color: #f26c50;
 }
 
 .benefit-card p {
@@ -245,7 +244,7 @@
 .step h3 {
   font-size: 1.1rem;
   margin-bottom: 10px;
-  color: #dd573d;
+  color: #f26c50;
 }
 
 .step p {
@@ -256,7 +255,7 @@
 /* CTA Section */
 .cta {
   padding: 60px 20px;
-  background-color: #dd573d;
+  background-color: #f26c50;
   color: white;
   text-align: center;
 }
