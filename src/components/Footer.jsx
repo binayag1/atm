@@ -184,10 +184,6 @@ const Footer = () => (
         <img src="/flag-2.png" alt="Flag 2" width="35" height="30" />
         <img src="/flag-3.png" alt="Flag 3" width="35" height="30" />
       </div>
-
-      <p style={{ maxWidth: '800px', margin: '0 auto' }}>
-        Any Time Movers AU acknowledges Aboriginal and Torres Strait Islander people as the Traditional Custodians of the land and pays respect to their Elders past, present, and emerging.
-      </p>
     </div>
   </footer>
 );
